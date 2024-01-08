@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="../js/v2.6.10/vue.js"></script>
+	</head>
+	<body>
+		<!-- 总 -->
+		<div id='who'>
+			{{test}}
+		<hr />	
+		<h2>guess what</h2>
+		<!-- //双向绑定，keyword -->
+		<input type="text" placeholder="输入关键词" v-model="keyword"/>
+		<ul>
+			<!-- fil数组循环提取绑定 -->
+			<li v-for='(a,b) of fil' :key="b">
+				{{a.name}}-{{a.age}}-{{a.sex}}
+			</li>
+		</ul>
+		</div>
+	</body>
+	<script>
+		const App = new Vue({
+			data:{
+				// 过渡联接
+				keyword:'',
+				test:'success！',
+				// 数据
+				baby:[
+					{name:'sabo',age:'7',sex:'nv'},
+					{name:'sibo_sa',age:'9',sex:'nv'},
+					{name:'scosa',age:'8',sex:'nv'}
+					]
+				
+			},
+			computed:{
+				
+				fil(){
+					return this.baby.filter((a)=>{
+						return a.name.indexOf(this.keyword)!=-1
+					})
+				}
+			}
+		})
+		App.$mount('#who')
+	</script>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript" src="../js/v2.6.10/vue.js"></script>
+	</head>
+	<body>
+		<div id='model1'>//
+			{{test}}
+		
+		<h2>all babies</h2>
+		<button @click="add">adddddddd</button> 
+	<!-- 	//点击绑定add事件 -->
+		<ul>
+			<!-- a:某一行的全部数据，b:序列号 -->
+			<li v-for="(a,b) of baby" :value='b'>
+			<!-- 	//循环baby里的数据 -->
+				{{a.name}}--{{a.age}}
+				{{b}}
+				
+				<input type="text" />
+			</li>
+		</ul>
+		</div>
+	</body>
+	<script>
+		const App = new Vue({
+			data:{
+				test:'success!',
+				// 数组
+				baby:[
+					{name:'siro',age:'10'},
+					{name:'sabo',age:'9'},
+					{name:'subi',age:'7'}
+				]
+				
+			},
+			methods:{
+				add(){
+					// 赋值：要添加的数据
+					const b = {name:'newb',age:'6'}
+					// 将一个元素添加到数组的开头
+					this.baby.unshift(b)
+				}
+			}
+		})
+		
+		App.$mount('#model1');
+	</script>
+</html>

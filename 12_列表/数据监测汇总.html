@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数据监测汇总</title>
+		<script src="../js/v2.6.10/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			{{content}}
+			<button @click="addSex">
+				点击添加性别
+			</button>
+			<button @click="addFriends">
+				点击添加朋友
+			</button>
+			<button @click="updateStudentFriend">
+				点击修改朋友
+			</button>
+			<button @click="addHobby">点击添加爱好</button>
+			<button @click="updateHobby">点击修改爱好</button>
+			<button @click="removeHobby">点击删除爱好</button>
+			<h2 v-if="student.sex">
+				性别 {{student.sex}}
+			</h2>
+			<br />
+			爱好
+			<h2 v-for="(a,b) of student.hobby">{{a}}</h2>
+			朋友
+			<ul>
+				<li v-for="(a,b) of student.friends">
+					{{a.name}}-{{a.age}}
+				</li>
+			</ul>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: '#box',
+			data: {
+				content: 'success',
+				student: {
+					name: "siro",
+					age: '13',
+					hobby: ['a', 's', 'd'],
+					friends: [{
+							name: "sio",
+							age: '14'
+						},
+						{
+							name: 'sao',
+							age: '2'
+						}
+					]
+				}
+			},
+			methods: {
+				addSex() {
+					this.$set(this.student, "sex", "nv")
+				},
+				addFriends() {
+					this.student.friends.unshift({
+						name: 'babo',
+						age: '4'
+					})
+				},
+				updateStudentFriend() {
+					this.student.friends[0].name = 'xxx'
+				},
+				addHobby() {
+					this.student.hobby.push('学习')
+				},
+				updateHobby() {
+					this.$set(this.student.hobby, 0, '润')
+				},
+				removeHobby() {
+					this.student.hobby = this.student.hobby.filter(
+						(h) => {
+							return h != 'a'
+						}
+					)
+				}
+
+			}
+		})
+	</script>
+</html>

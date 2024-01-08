@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>set使用</title>
+		<script src="../js/v2.6.10/vue.js"></script>
+	</head>
+
+	<body>
+
+		<div id="box">
+			{{content}}
+			<button @click="addSex">添加属性</button>
+			<h2 v-if="student.sex">性别：{{student.sex}}</h2>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: "#box",
+			data: {
+				content: 'success',
+				student: {
+					name: 'siro',
+					age: '18',
+					frineds: [{
+						name: 'sibo',
+						age: '18'
+					}, {
+						name: 'sito',
+						age: '13'
+					}]
+
+				}
+
+			},
+			methods: {
+				addSex() {
+					this.$set(this.student, 'sex', 'nv')
+				}
+			}
+		})
+	</script>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script src="../js/v2.6.10/vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+			{{content}}
+			<div v-text="name">111</div>
+			<div v-text="str">111</div>
+			<div v-html="name"></div>
+			<div v-html="str"></div>
+			<button @click='n++'>n++</button>
+			<div>{{n}}</div>
+
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: "#box",
+			data: {
+				content: 'success',
+				name: 'test',
+				str: '<h3>hi</h3>',
+				n: 1
+
+			}
+		})
+	</script>
+</html>

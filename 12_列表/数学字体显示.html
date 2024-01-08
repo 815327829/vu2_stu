@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>数学字体</title>
+		<script src="../js/v2.6.10/vue.js"></script>
+		<script src="https://cdn.bootcss.com/mathjax/3.0.5/es5/tex-svg.js">
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			{{content}}
+			一元二次方程 \(ax^2 + b x + c = 0 \) 求解 \( x = {-b\pm\sqrt{b^2-4ac}\over 2a}\)
+			公式：\((RR_1R_2 - b\sin{\beta_4})(1+R)L_3\over {d^2 \cos{\beta^2} E A_3} \) + \(R_2L_4\over REA_4\)
+			<div>
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				<hr />
+				\(f_a = f_{ak}+\eta b \gamma(L_1-3)+\eta d\gamma_m(d-0.5)\)
+				<ul>
+					<li>\(M_I=[L_1*s^2*(2*P_{kmax}+P_I)/6-24*H*L_1*s^2/2]*1.35\)
+					</li>
+					<li>\(A_d=M_I*1000/(0.9*(H-0.04-1.5*D/1000)*f_y)\)
+					</li>
+					<li>\(a=(L_1*1000 -80)/(n-1)\)
+					</li>
+					<li>\(100\leq a\leq 200\)
+					</li>
+					<li>\(A=n*\pi *(D/2)^2 \)
+					</li>
+					<li>\(\rho \geq 0.15\%\)
+					</li>
+					<li>\(\rho = A/(L_1*H*1000*1000)\)
+					</li>
+					<li>\(P_{kmax}\leq 1.2*f_a\)
+					</li>
+				</ul>
+
+			</div>
+		</div>
+	</body>
+	<script>
+		new Vue({
+			el: '#box',
+			data: {
+				content: 'success'
+			}
+		})
+	</script>
+</html>
